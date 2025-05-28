@@ -1,9 +1,17 @@
 import streamlit as st
 from fastai.vision.all import *
 import pathlib
+
 import plotly.express as px
-temp=pathlib.PosixPath
-pathlib.PosixPath=pathlib.WindowsPath
+import platform
+
+plt=platform.system()
+if plt=='Linux':
+    pathlib.WindowsPath=pathlib.PosixPath
+else:
+    temp=pathlib.PosixPath
+    pathlib.PosixPath=pathlib.WindowsPath
+
 
 st.title('Klassifikatsiya qilish')
 
@@ -13,7 +21,7 @@ if file:
     # PIL convert
     img=PILImage.create(file)
     # model
-    model=load_learner('transport_model.pkl')
+    model=load_learner('transport_model5.pkl')
 
     # prediction
     pred,pred_id,probs=model.predict(img)
