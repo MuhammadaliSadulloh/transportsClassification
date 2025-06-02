@@ -13,7 +13,7 @@ else:
     pathlib.PosixPath=pathlib.WindowsPath
 
 
-st.title('Klassifikatsiya qilish')
+st.title('Transportni Klassifikatsiya qilish \n #avtomobil,samalyot,kema')
 
 file=st.file_uploader('Rasm yuklash', type=['png', 'jpeg', 'gif', 'jpg'])
 if file:
